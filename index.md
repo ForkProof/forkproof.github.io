@@ -13,14 +13,14 @@ Smart contract and key-custody security reviews. Every finding ships with a repr
 
 - Source review plus local reproduction: Foundry and Anchor tests on local or forked chains. No testing against live systems without written permission.
 - Each finding is labelled by what was shown: hypothesis, reproduced locally, or confirmed.
-- Responsible disclosure. Nothing is published without the project's consent.
+- Responsible disclosure. Vulnerability details are never published without the project's consent.
 - A review is not a guarantee of security; it reports what was examined and found.
 
 ## Public reports
 
 | Date | Project | Scope | Findings | Report |
 |------|---------|-------|----------|--------|
-| | | | | First reports coming soon |
+| Oct 2026 | OpenZeppelin `ERC7786OpenBridge` (community-contracts `0361935`) | N-of-M cross-chain bridge: message counting, sender authentication, replay, re-entrancy | No exploitable vulnerability; 4 design observations | [Repository and case study](https://github.com/ForkProof/oz-erc7786-fuzz) |
 
 ## Contact
 
