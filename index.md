@@ -13,7 +13,7 @@ Smart contract and key-custody security reviews. Every finding ships with a repr
 
 - Source review plus local reproduction: Foundry and Anchor tests on local or forked chains. No testing against live systems without written permission.
 - Each finding is labelled by what was shown: hypothesis, reproduced locally, or confirmed.
-- Responsible disclosure. Vulnerability details are never published without the project's consent.
+- Responsible disclosure. We don't publish vulnerability details without the project's consent — except for a live but unreachable or abandoned deployment, where we may publish a redacted advisory (no exploit, no proof of concept) after a documented attempt to notify the operator.
 - A review is not a guarantee of security; it reports what was examined and found.
 
 ## Public reports
@@ -21,11 +21,8 @@ Smart contract and key-custody security reviews. Every finding ships with a repr
 | Date | Project | Scope | Findings | Report |
 |------|---------|-------|----------|--------|
 | Oct 2026 | OpenZeppelin `ERC7786OpenBridge` (community-contracts `0361935`) | N-of-M cross-chain bridge: message counting, sender authentication, replay, re-entrancy | No exploitable vulnerability; 4 design observations | [Repository and case study](https://github.com/ForkProof/oz-erc7786-fuzz) |
+| Nov 2026 | BidCoin (Arbitrum penny-auction) | Live staking / treasury contracts: access control on reward accounting | High: unauthorized treasury drain (redacted; disclosed to operator) | [Advisory](https://github.com/ForkProof/forkproof.github.io/blob/main/bidcoin-advisory.md) |
 
 ## Contact
 
 hello@forkproof.com
-
----
-
-ForkProof is operated by Modulout LLC.
