@@ -23,7 +23,7 @@ Smart contract and key-custody security reviews. Every finding ships with a repr
 
 ## Methodology
 
-[How we test: deriving the invariant, not trusting the code](/methodology) — reverse-mapping to payable impact, deriving the solvency condition independently of the code, and adversarial fuzzing against real on-chain state with no mocks.
+[How we test: deriving the invariant, not trusting the code](/methodology.html) — reverse-mapping to payable impact, deriving the solvency condition independently of the code, and adversarial fuzzing against real on-chain state with no mocks.
 
 ## Public reports
 
