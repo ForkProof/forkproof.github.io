@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%- comment -%} Security hardening. GitHub Pages can't set HTTP headers, so the
+clickjacking/sniffing/transport controls that can live in a <meta> go here. No
+JavaScript ships with this theme, so script-src is 'none'. {%- endcomment -%}
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="{% if site.data.theme.scheme == 'dark' %}dark{% elsif site.data.theme.scheme == 'light' %}light{% else %}light dark{% endif %}">
+
+{%- comment -%} {% seo %} is the ONLY source of <title>, meta description,
+canonical, Open Graph and Twitter tags. Do not add a second title or
+description tag anywhere. {%- endcomment -%}
+{% seo %}
+
+<link rel="preload" href="/assets/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/main.css?v={{ site.github.build_revision | default: site.time | date: '%s' }}">

@@ -1,0 +1,67 @@
+<!doctype html>
+{%- assign scheme = site.data.theme.scheme | default: 'auto' -%}
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}"{% if scheme == 'dark' %} data-scheme="dark"{% elsif scheme == 'light' %} data-scheme="light"{% endif %}>
+<head>
+  {%- include head.html -%}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  {%- include header.html -%}
+
+  {%- comment -%} One <h1> per page. If the Markdown body already rendered an
+  <h1>, it is the page's heading (CSS styles the first one as a page head);
+  otherwise the layout supplies one from headline / title / site.title. {%- endcomment -%}
+  {%- capture body_has_h1 -%}{% if content contains '<h1' %}1{% endif %}{%- endcapture -%}
+  {%- assign body_has_h1 = body_has_h1 | strip -%}
+  {%- assign the_h1 = page.headline | default: page.title | default: site.title -%}
+
+  <main id="main" class="wrap">
+  {%- if page.url == '/' -%}
+    {%- comment -%} Landing {%- endcomment -%}
+    <div class="page page-landing{% if page.numbered %} numbered{% endif %}">
+      <header class="page-head hero-head">
+        <h1 class="hero">{{ the_h1 }}</h1>
+        {%- unless page.lede == false -%}{%- if page.description %}<p class="lede">{{ page.description }}</p>{% endif -%}{%- endunless -%}
+      </header>
+      {%- include cta.html -%}
+      <div class="prose">{{ content }}</div>
+      {%- unless page.endmark == false %}<p class="endmark" aria-hidden="true">&#8718;</p>{% endunless -%}
+    </div>
+
+  {%- elsif page.date -%}
+    {%- comment -%} Post or advisory (has a date) {%- endcomment -%}
+    <article class="page page-post{% if page.numbered %} numbered{% endif %}">
+      <header class="page-head">
+        <div class="post-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %-d, %Y' }}</time>
+          {%- if page.author %}<span class="meta-author">{{ page.author }}</span>{% endif -%}
+          {%- if page.severity %}<span class="sev sev-{{ page.severity | downcase }}">{{ page.severity }}</span>{% endif -%}
+          {%- if page.last_modified_at %}<span class="meta-updated">updated {{ page.last_modified_at | date: '%b %-d, %Y' }}</span>{% endif -%}
+        </div>
+        {%- unless body_has_h1 == '1' -%}
+          <h1>{{ the_h1 }}</h1>
+          {%- unless page.lede == false -%}{%- if page.description %}<p class="lede">{{ page.description }}</p>{% endif -%}{%- endunless -%}
+        {%- endunless -%}
+      </header>
+      <div class="prose">{{ content }}</div>
+      {%- unless page.endmark == false %}<p class="endmark" aria-hidden="true">&#8718;</p>{% endunless -%}
+    </article>
+
+  {%- else -%}
+    {%- comment -%} Long-form page {%- endcomment -%}
+    <article class="page page-doc{% if page.numbered %} numbered{% endif %}">
+      {%- unless body_has_h1 == '1' -%}
+      <header class="page-head">
+        <h1>{{ the_h1 }}</h1>
+        {%- unless page.lede == false -%}{%- if page.description %}<p class="lede">{{ page.description }}</p>{% endif -%}{%- endunless -%}
+      </header>
+      {%- endunless -%}
+      <div class="prose">{{ content }}</div>
+      {%- unless page.endmark == false %}<p class="endmark" aria-hidden="true">&#8718;</p>{% endunless -%}
+    </article>
+  {%- endif -%}
+  </main>
+
+  {%- include footer.html -%}
+</body>
+</html>

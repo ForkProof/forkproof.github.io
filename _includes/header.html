@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="/">{{ site.data.theme.wordmark | default: site.title | default: 'ForkProof' }}</a>
+    <nav class="site-nav" aria-label="Primary">
+      {%- assign nav = site.data.theme.nav -%}
+      {%- if nav -%}
+        {%- for item in nav -%}
+          {%- assign target = item.url -%}
+          {%- if item.path -%}
+            {%- for p in site.pages -%}
+              {%- if p.path == item.path -%}{%- assign target = p.url -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+          {%- assign is_current = false -%}
+          {%- if target == page.url -%}{%- assign is_current = true -%}{%- endif -%}
+          <a href="{{ target }}"{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="/methodology.html">Methodology</a>
+        <a href="/#public-reports">Reports</a>
+        <a href="/#contact">Contact</a>
+      {%- endif -%}
+    </nav>
+  </div>
+</header>

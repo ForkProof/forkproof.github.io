@@ -1,0 +1,19 @@
+{%- assign email = site.data.theme.email | default: 'hello@forkproof.com' -%}
+{%- assign contact = site.data.theme.contact -%}
+{%- assign legal = site.data.theme.legal_name | default: site.title | default: 'ForkProof' -%}
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <h2 class="footer-head">Contact</h2>
+    <p class="footer-email"><a href="mailto:{{ email }}">{{ email }}</a></p>
+    {%- if contact.note %}<p class="footer-note">{{ contact.note }}</p>{% endif -%}
+    {%- if contact.pgp_fingerprint %}
+    <p class="footer-pgp">PGP {% if contact.pgp_url %}<a href="{{ contact.pgp_url }}">{{ contact.pgp_fingerprint }}</a>{% else %}<code>{{ contact.pgp_fingerprint }}</code>{% endif %}</p>
+    {%- endif -%}
+    {%- if contact.links %}
+    <p class="footer-links">
+      {%- for l in contact.links -%}<a href="{{ l.url }}">{{ l.title }}</a>{% unless forloop.last %} · {% endunless %}{%- endfor -%}
+    </p>
+    {%- endif -%}
+    <p class="footer-copy">© {{ site.time | date: '%Y' }} {{ legal }}. A review reports what was examined and found; it is not a guarantee of security.</p>
+  </div>
+</footer>

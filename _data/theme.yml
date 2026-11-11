@@ -1,0 +1,22 @@
+# Site-wide strings and links for the ForkProof theme. Every key is optional;
+# the layout falls back to sensible defaults when a key is missing.
+
+scheme: auto            # auto | light | dark
+email: hello@forkproof.com
+
+cta:
+  title: Pre-launch security reviews
+  note: Smart contracts and key custody, stress-tested the way an attacker would — before you ship.
+  subject: Security review enquiry
+
+nav:
+  - title: Methodology
+    path: methodology.md
+    url: /methodology.html
+  - title: Reports
+    url: /#public-reports
+  - title: Contact
+    url: /#contact
+
+contact:
+  note: Responsible disclosure. We don't publish vulnerability details without the project's consent.

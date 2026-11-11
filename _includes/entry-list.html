@@ -1,0 +1,20 @@
+{%- comment -%}
+Dated list of posts or advisories, newest first.
+Usage:
+  {% include entry-list.html %}                      -> site.posts
+  {% include entry-list.html entries=site.advisories %}
+  {% include entry-list.html limit=3 %}
+{%- endcomment -%}
+{%- assign entries = include.entries | default: site.posts -%}
+{%- assign sorted = entries | sort: 'date' | reverse -%}
+{%- if include.limit -%}{%- assign sorted = sorted | slice: 0, include.limit -%}{%- endif -%}
+<ul class="entry-list">
+  {%- for e in sorted -%}
+  <li class="entry">
+    {%- if e.date %}<time class="entry-date" datetime="{{ e.date | date_to_xmlschema }}">{{ e.date | date: '%b %-d, %Y' }}</time>{% endif -%}
+    <a class="entry-title" href="{{ e.url }}">{{ e.title | default: e.name }}</a>
+    {%- if e.severity %} <span class="sev sev-{{ e.severity | downcase }}">{{ e.severity }}</span>{% endif -%}
+    {%- if e.description %}<span class="entry-desc">{{ e.description }}</span>{% endif -%}
+  </li>
+  {%- endfor -%}
+</ul>

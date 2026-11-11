@@ -1,0 +1,11 @@
+{%- assign cta = site.data.theme.cta -%}
+{%- assign email = site.data.theme.email | default: 'hello@forkproof.com' -%}
+{%- assign subject = cta.subject -%}
+{%- capture mailto -%}mailto:{{ email }}{% if subject %}?subject={{ subject | uri_escape }}{% endif %}{%- endcapture -%}
+<aside class="cta-band">
+  <div class="wrap">
+    <p class="cta-title">{{ cta.title | default: 'Pre-launch security reviews' }}</p>
+    {%- if cta.note %}<p class="cta-note">{{ cta.note }}</p>{% endif -%}
+    <a class="cta-link" href="{{ mailto }}">{{ email }}</a>
+  </div>
+</aside>

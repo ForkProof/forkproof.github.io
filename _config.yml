@@ -12,3 +12,10 @@ plugins:
   - jekyll-seo-tag
 
 # robots.txt is served from the file in the repo root (see robots.txt).
+
+exclude:
+  - templates
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md

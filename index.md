@@ -1,11 +1,8 @@
 ---
-title: "ForkProof — smart contract & key-custody security reviews"
-description: "Pre-launch and pre-partnership smart-contract security reviews. Every finding ships with a reproducible proof of concept on a local fork."
+title: "Smart contract & key-custody security reviews"
+description: "Pre-launch and pre-partnership security reviews. Every finding ships with a reproducible proof of concept on a local fork."
+headline: "Smart-contract and key-custody security, proven on a fork."
 ---
-
-# ForkProof
-
-Smart contract and key-custody security reviews. Every finding ships with a reproducible proof of concept on a local fork.
 
 ## What we review
 
@@ -21,17 +18,11 @@ Smart contract and key-custody security reviews. Every finding ships with a repr
 - Responsible disclosure. We don't publish vulnerability details without the project's consent — except for a live but unreachable or abandoned deployment, where we may publish a redacted advisory (no exploit, no proof of concept) after a documented attempt to notify the operator.
 - A review is not a guarantee of security; it reports what was examined and found.
 
-## Methodology
-
-[How we test: deriving the invariant, not trusting the code](/methodology.html) — reverse-mapping to payable impact, deriving the solvency condition independently of the code, and adversarial fuzzing against real on-chain state with no mocks.
+[Read our testing methodology →](/methodology.html)
 
 ## Public reports
 
 | Date | Project | Scope | Findings | Report |
 |------|---------|-------|----------|--------|
-| Oct 2026 | OpenZeppelin `ERC7786OpenBridge` (community-contracts `0361935`) | N-of-M cross-chain bridge: message counting, sender authentication, replay, re-entrancy | No exploitable vulnerability; 4 design observations | [Repository and case study](https://github.com/ForkProof/oz-erc7786-fuzz) |
-| Nov 2026 | BidCoin (Arbitrum penny-auction) | Live staking / treasury contracts: access control on reward accounting | High: unauthorized treasury drain (redacted; disclosed to operator) | [Advisory](https://github.com/ForkProof/forkproof.github.io/blob/main/bidcoin-advisory.md) |
-
-## Contact
-
-hello@forkproof.com
+| Oct 2026 | OpenZeppelin `ERC7786OpenBridge` (community-contracts `0361935`) | N-of-M cross-chain bridge: message counting, sender authentication, replay, re-entrancy | *Info*{: .sev .sev-info} no exploitable vulnerability; 4 design observations | [Repository and case study](https://github.com/ForkProof/oz-erc7786-fuzz) |
+| Nov 2026 | BidCoin (Arbitrum penny-auction) | Live staking / treasury contracts: access control on reward accounting | *High*{: .sev .sev-high} unauthorized treasury drain (redacted; disclosed to operator) | [Advisory](/bidcoin-advisory.html) |

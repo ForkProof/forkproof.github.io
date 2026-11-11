@@ -1,6 +1,14 @@
+---
+title: "Security advisory: missing access control in a live BidCoin (Arbitrum) contract"
+description: "A redacted ForkProof advisory: a missing-authorization defect in a live BidCoin staking/treasury contract on Arbitrum, disclosed to the operator. No exploit or proof of concept published."
+date: 2026-11-09
+author: ForkProof
+severity: High
+---
+
 # Security advisory — missing access control in a live BidCoin (Arbitrum) contract
 
-**ForkProof** · Severity: High (unauthorized treasury drain) · Status: live / unfixed at time of writing
+Status: live / unfixed at time of writing (unauthorized treasury drain).
 
 > This advisory describes the issue and its impact. It **deliberately withholds the exact vulnerable function names, the
 > attack sequence, and our proof of concept**, because the contract is still live and holds user funds. The detail below is
