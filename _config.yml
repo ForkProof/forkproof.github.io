@@ -1,0 +1,14 @@
+title: ForkProof
+description: >-
+  Pre-launch and pre-partnership smart-contract and key-custody security
+  reviews. Every finding ships with a reproducible proof of concept on a local fork.
+url: https://forkproof.com
+
+# jekyll-sitemap is on GitHub Pages' allow-list; it auto-generates /sitemap.xml
+# (it needs `url` set above). jekyll-seo-tag emits meta/OpenGraph tags when a
+# layout includes {% seo %}.
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# robots.txt is served from the file in the repo root (see robots.txt).

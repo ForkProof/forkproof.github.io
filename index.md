@@ -1,3 +1,8 @@
+---
+title: "ForkProof — smart contract & key-custody security reviews"
+description: "Pre-launch and pre-partnership smart-contract security reviews. Every finding ships with a reproducible proof of concept on a local fork."
+---
+
 # ForkProof
 
 Smart contract and key-custody security reviews. Every finding ships with a reproducible proof of concept on a local fork.
@@ -15,6 +20,10 @@ Smart contract and key-custody security reviews. Every finding ships with a repr
 - Each finding is labelled by what was shown: hypothesis, reproduced locally, or confirmed.
 - Responsible disclosure. We don't publish vulnerability details without the project's consent — except for a live but unreachable or abandoned deployment, where we may publish a redacted advisory (no exploit, no proof of concept) after a documented attempt to notify the operator.
 - A review is not a guarantee of security; it reports what was examined and found.
+
+## Methodology
+
+[How we test: deriving the invariant, not trusting the code](/methodology) — reverse-mapping to payable impact, deriving the solvency condition independently of the code, and adversarial fuzzing against real on-chain state with no mocks.
 
 ## Public reports
 
