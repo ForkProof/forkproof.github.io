@@ -15,5 +15,8 @@
     </p>
     {%- endif -%}
     <p class="footer-copy">© {{ site.time | date: '%Y' }} {{ legal }}. A review reports what was examined and found; it is not a guarantee of security.</p>
+    {%- if site.data.theme.operator %}
+    <p class="footer-operator">ForkProof is operated by {{ site.data.theme.operator }}.</p>
+    {%- endif %}
   </div>
 </footer>

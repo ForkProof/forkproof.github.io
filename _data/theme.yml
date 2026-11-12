@@ -3,6 +3,7 @@
 
 scheme: auto            # auto | light | dark
 email: hello@forkproof.com
+operator: Modulout LLC (Wyoming, USA)   # legal entity behind ForkProof (shown in the footer)
 
 cta:
   title: Pre-launch security reviews
