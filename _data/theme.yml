@@ -11,6 +11,10 @@ cta:
   subject: Security review enquiry
 
 nav:
+  - title: Pre-Audit Review
+    url: /services/pre-audit-security-review/
+  - title: Assessments
+    url: /services/focused-smart-contract-assessment/
   - title: Methodology
     path: methodology.md
     url: /methodology.html

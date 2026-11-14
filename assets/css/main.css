@@ -2,7 +2,7 @@
    ForkProof theme — single stylesheet. No JS, no build step.
    1. Fonts   2. Tokens   3. Base   4. Layout   5. Prose   6. Page heads
    7. Code    8. Labels & callouts   9. Numbering & endmark   10. A11y
-   11. Responsive & print
+   11. Responsive & print   12. Service pages (before 11 in file)
    ========================================================================== */
 
 /* 1. Fonts ----------------------------------------------------------------- */
@@ -312,6 +312,102 @@ code, kbd, samp, pre { font-family: var(--mono); }
 }
 .skip:focus { left: 0; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+/* 12. Service pages (layout: service) -------------------------------------- */
+.svc { display: block; }
+.svc .wrap { max-width: var(--wide); }
+.svc h1, .svc h2, .svc h3 { font-family: var(--serif); line-height: 1.2; }
+.svc h2 { font-size: var(--fs-h2); margin: 0 0 1.2rem; max-width: var(--measure); }
+.svc h3 { font-size: 1.08rem; margin: 0 0 .35rem; }
+.svc p { margin: 0; }
+.svc ul, .svc ol { margin: 0; }
+.svc-hero { padding-block: 3.5rem 2.75rem; border-bottom: 1px solid var(--rule); }
+.svc-hero h1 { font-size: var(--fs-hero); letter-spacing: -0.01em; margin: .4rem 0 1rem; max-width: 18ch; }
+.eyebrow {
+  font-family: var(--mono); font-size: var(--fs-small); font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0;
+}
+.svc-lede { color: var(--ink-soft); font-size: 1.15rem; max-width: var(--measure); }
+.svc-text { max-width: var(--measure); display: grid; gap: .9rem; margin-bottom: 1.6rem; }
+.svc .svc-price { margin: 1.4rem 0 0; display: grid; gap: .15rem; }
+.svc-price strong { font-family: var(--mono); font-size: 1.15rem; color: var(--ink); }
+.svc-price span { color: var(--ink-soft); font-size: .98rem; }
+.svc-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem !important; }
+.svc-small { color: var(--ink-faint); font-size: var(--fs-small); margin-top: .9rem !important; max-width: var(--measure); }
+.svc-note {
+  border-left: 3px solid var(--note-bar); background: var(--note-bg);
+  padding: .8rem 1rem; border-radius: 0 4px 4px 0; margin-top: 1.6rem !important;
+  font-size: .97rem; max-width: var(--measure);
+}
+.btn {
+  display: inline-block; font-family: var(--mono); font-size: .95rem; font-weight: 600;
+  padding: .75rem 1.15rem; border-radius: 4px; text-decoration: none; line-height: 1.2;
+  border: 1px solid var(--ink);
+}
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.btn-secondary { background: transparent; color: var(--ink); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.svc-section { padding-block: 3rem; border-bottom: 1px solid var(--rule); }
+.svc-grid { list-style: none; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.svc-grid > li { background: var(--paper); padding: 1.2rem 1.25rem; }
+.svc-grid p { color: var(--ink-soft); font-size: .98rem; }
+.svc-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.svc-numbered { counter-reset: svc; }
+.svc-numbered > li h3::before { counter-increment: svc; content: "0" counter(svc) "  "; font-family: var(--mono); color: var(--accent); font-weight: 600; }
+.svc-checklist { list-style: none; padding: 0; display: grid; gap: .55rem; max-width: var(--measure); }
+.svc-checklist li { padding-left: 1.6rem; position: relative; }
+.svc-checklist li::before { content: "\2713"; position: absolute; left: 0; color: var(--accent); font-family: var(--mono); font-weight: 600; }
+.svc-list { padding-left: 1.3rem; display: grid; gap: .45rem; max-width: var(--measure); }
+.svc-list-cols { max-width: none; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; }
+.svc-subhead { margin-bottom: .8rem !important; font-family: var(--mono) !important; font-size: var(--fs-small) !important; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-faint); }
+.svc-steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.4rem; }
+.svc-steps li { border-top: 2px solid var(--accent); padding-top: .8rem; }
+.svc-steps p { color: var(--ink-soft); font-size: .98rem; }
+.step-no { display: block; font-family: var(--mono); font-weight: 600; color: var(--accent); margin-bottom: .3rem; }
+.price-panel {
+  border: 1px solid var(--rule); background: var(--panel); border-radius: 6px;
+  padding: 1.6rem 1.6rem 1.4rem; max-width: 36rem; display: grid; gap: .6rem;
+}
+.price-name { font-family: var(--mono); font-size: var(--fs-small); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.price-amount { font-family: var(--serif); font-size: 2rem; font-weight: 700; line-height: 1.15; }
+.price-amount span { font-size: 1rem; font-weight: 400; color: var(--ink-soft); }
+.price-meta { color: var(--ink-soft); }
+.price-panel .svc-checklist { margin-block: .5rem; }
+.svc-terms { margin-top: 1.4rem !important; padding-left: 1.2rem; color: var(--ink-soft); font-size: .95rem; display: grid; gap: .3rem; max-width: var(--measure); }
+.svc-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.compare-col { border: 1px solid var(--rule); border-radius: 6px; padding: 1.3rem; display: grid; gap: .8rem; align-content: start; }
+.compare-current { border-color: var(--accent); }
+.svc-faq { max-width: var(--measure); margin: 0; }
+.svc-faq dt { font-weight: 700; margin-top: 1.3rem; }
+.svc-faq dt:first-child { margin-top: 0; }
+.svc-faq dd { margin: .35rem 0 0; color: var(--ink-soft); }
+.svc-proof { padding-block: 2.5rem; background: var(--panel); border-bottom: 1px solid var(--rule); }
+.svc-proof h2 { font-size: 1.25rem; }
+.svc-links { margin-top: .9rem !important; font-family: var(--mono); font-size: var(--fs-small); }
+.svc-enquiry { padding-block: 3.5rem; }
+.svc-enquiry h2 { font-size: var(--fs-h1); }
+.svc-fields { padding-left: 1.3rem; color: var(--ink-soft); font-size: .95rem; margin-top: .5rem !important; columns: 2; column-gap: 2rem; max-width: var(--measure); }
+.svc-warn {
+  border-left: 3px solid var(--warn-bar); background: var(--warn-bg);
+  padding: .7rem 1rem; border-radius: 0 4px 4px 0; margin-top: 1.2rem !important;
+  font-size: .95rem; max-width: var(--measure);
+}
+.svc-services { list-style: none; padding: 0 !important; display: grid; gap: 1rem; }
+.svc-services li { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.1rem; margin: 0 !important; }
+@media (max-width: 860px) {
+  .svc-grid-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .svc-hero { padding-block: 2.4rem 2rem; }
+  .svc-grid-3, .svc-compare, .svc-list-cols { grid-template-columns: 1fr; }
+  .svc-fields { columns: 1; }
+  .svc-actions .btn { width: 100%; text-align: center; }
+  .price-panel { padding: 1.2rem; }
+}
+@media print {
+  .svc-actions, .svc-enquiry .btn { display: none !important; }
+}
 
 /* 11. Responsive & print --------------------------------------------------- */
 @media (max-width: 640px) {

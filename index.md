@@ -9,7 +9,14 @@ headline: "Smart-contract and key-custody security, proven on a fork."
 - **Key custody and operations**: who holds upgrade and admin keys, hot keys vs multisig, signing services, secret handling, deploy and emergency paths. The area most audits leave out, and where many of the largest losses started.
 - **Smart contracts**: Solidity (EVM) and Rust (Solana / Anchor), including cross-chain messaging and bridge integrations.
 - **Pre-partnership due diligence**: an independent view before you integrate with, invest in or list a protocol.
-- **Audit preparation**: clear the obvious issues before a full audit so it costs less.
+- **Audit preparation**: find and fix issues before a full audit, so the formal review starts from cleaner, better-tested code.
+
+## Services
+
+<ul class="svc-services">
+<li><a href="/services/pre-audit-security-review/"><strong>Pre-Audit Security Review</strong></a>: a short, fixed-price review before your formal audit. From $3,500, typically 3–5 working days for a small, defined scope.</li>
+<li><a href="/services/focused-smart-contract-assessment/"><strong>Focused Smart Contract Assessment</strong></a>: a deeper investigation of a critical component or security question. Typically $5,000–$8,000 for a limited scope.</li>
+</ul>
 
 ## How we work
 
