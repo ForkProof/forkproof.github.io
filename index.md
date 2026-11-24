@@ -33,3 +33,4 @@ headline: "Smart-contract and key-custody security, proven on a fork."
 |------|---------|-------|----------|--------|
 | Oct 2026 | OpenZeppelin `ERC7786OpenBridge` (community-contracts `0361935`) | N-of-M cross-chain bridge: message counting, sender authentication, replay, re-entrancy | *Info*{: .sev .sev-info} no exploitable vulnerability; 4 design observations | [Repository and case study](https://github.com/ForkProof/oz-erc7786-fuzz) |
 | Nov 2026 | BidCoin (Arbitrum penny-auction) | Live staking / treasury contracts: access control on reward accounting | *High*{: .sev .sev-high} unauthorized treasury drain (redacted; disclosed to operator) | [Advisory](/bidcoin-advisory.html) |
+| Nov 2026 | The Gavel Protocol (Arbitrum One, NFT-collateral lending) | Cross-loan collateral lifecycle: position NFTs as collateral | *Low*{: .sev .sev-low} published by Gavel as KI-4 with ForkProof credit | [Case study](/gavel-ki4-case-study.html) |
